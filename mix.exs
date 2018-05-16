@@ -34,7 +34,7 @@ defmodule Shield.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:phoenix, "~> 1.3.0"},
-     {:phoenix_ecto, "~> 3.2.1"},
+     {:phoenix_ecto, "~> 3.3.0"},
      {:gettext, "~> 0.13"},
      {:cowboy, "~> 1.0"},
      {:authable, "~> 0.8.0"},
