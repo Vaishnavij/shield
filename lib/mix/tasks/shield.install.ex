@@ -57,10 +57,10 @@ defmodule Mix.Tasks.Shield.Install do
   end
 
   defp multi_cp do
-    Mix.Phoenix.copy_from shield_paths(), "./deps/shield/", "", [], @controllers
-    Mix.Phoenix.copy_from shield_paths(), "./deps/shield/", "", [], @views
-    Mix.Phoenix.copy_from authable_paths(), "./deps/authable/", "", [], @models
-    Mix.Phoenix.copy_from authable_paths(), "./deps/authable/", "", [], @migrations
+    Mix.Phoenix.copy_from shield_paths(), "./deps/shield/", [], @controllers
+    Mix.Phoenix.copy_from shield_paths(), "./deps/shield/", [], @views
+    Mix.Phoenix.copy_from authable_paths(), "./deps/authable/", [], @models
+    Mix.Phoenix.copy_from authable_paths(), "./deps/authable/", [], @migrations
 
     print_controllers_info()
     print_ecto_info()

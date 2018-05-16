@@ -36,7 +36,7 @@ defmodule Shield.Mixfile do
     [{:phoenix, "~> 1.2.0"},
      {:phoenix_ecto, "~> 3.2.1"},
      {:gettext, "~> 0.13"},
-     {:cowboy, "~> 1.0.4"},
+     {:cowboy, "~> 1.0"},
      {:authable, "~> 0.8.0"},
      {:shield_notifier, "~> 0.2.0"},
      {:cors_plug, "~> 1.1.4"},
