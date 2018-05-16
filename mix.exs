@@ -39,7 +39,7 @@ defmodule Shield.Mixfile do
      {:cowboy, "~> 1.0"},
      {:authable, "~> 0.8.0"},
      {:shield_notifier, "~> 0.2.0"},
-     {:cors_plug, "~> 1.1.4"},
+     {:cors_plug, "~> 1.5"},
      {:poison, "~> 2.0 or ~> 3.0 or ~> 3.1"},
      {:ex_machina, "~> 1.0.1", only: :test},
      {:credo, "~> 0.6.1", only: :dev},
