@@ -24,7 +24,7 @@ defmodule Shield.Policy.User.Login do
     |> validate_email_password_match()
     |> validate_email_confirmation()
     |> validate_one_time_password()
-    |> insert_session_token()
+    |> insert_access_token()
   end
 
   defp validate_email_exists(%{"email" => email} = params) do
@@ -82,6 +82,17 @@ defmodule Shield.Policy.User.Login do
             %{otp_value: ["Invalid one time password"]}}}
           true -> {:ok, params}
         end
+    end
+  end
+
+  defp insert_access_token({:ok, %{"user" => user} = params}) do
+    changeset = @token_store.access_token_changeset(%@token_store{},
+      %{user_id: user.id, details: %{"scope" => "session"}})
+    case @repo.insert(changeset) do
+        {:ok, token} ->
+          {:ok, Map.put(params, "token", token)}
+        {:error, changeset} ->
+          {:error, {:unprocessable_entity, changeset}}
     end
   end
 
