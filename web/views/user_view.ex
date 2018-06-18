@@ -9,10 +9,6 @@ defmodule Shield.UserView do
     %{user: render_one(user, __MODULE__, "user.json")}
   end
 
-  def render("token.json", %{token: token}) do
-    %{access_token: token.value}
-  end
-
   def render("user.json", %{user: user}) do
     json = %{id: user.id, email: user.email}
     if is_nil(user.settings), do: json,

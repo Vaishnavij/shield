@@ -114,7 +114,7 @@ defmodule Shield.UserController do
         |> put_session(:acces_token, token.value)
         |> configure_session(renew: true)
         |> put_status(:created)
-        |> render(@views[:user], "token.json", token: token)
+        |> render(@views[:token], "token.json", token: token)
       {:error, {http_status_code, %Ecto.Changeset{} = errors} = res} ->
         conn
         |> @hooks.after_user_login_failure({user_params, res})
